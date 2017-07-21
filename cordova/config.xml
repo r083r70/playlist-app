@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="example.helloworld" version="0.1.0">
+  <name>Helloworld</name>
+  <description>
+    Example Tabris.js App
+  </description>
+  <author email="roberto.baldi@mail.polimi.it">
+    Roberto Baldi
+  </author>
+</widget>
