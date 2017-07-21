@@ -27,7 +27,7 @@ function createHome() {
 		font: 'bold 22px'
 	})
 	.on('select', () => {
-		localStorage.setItem('id_key', text);
+		localStorage.setItem('id_key', idTextInput.text);
 		buttonCallback();
 	})
 	.appendTo(page);	

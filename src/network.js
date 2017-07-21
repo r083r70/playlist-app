@@ -41,7 +41,7 @@ function encodeTracks(tracks) {
 
 function createPlaylist(name, tracks) {
 	var id = getId();
-	return fetch(CREATE_URL.replace('INPUT_NAME', name).replace('INPUT_TRACKS', encodeTracks(tracks) + id), {method: 'POST'}).then(response => response.json());
+	return fetch(CREATE_URL.replace('INPUT_NAME', name).replace('INPUT_TRACKS', encodeTracks(tracks)) + id, {method: 'POST'}).then(response => response.json());
 }
 
 // TODO: DOING THE CATCHes
