@@ -16,7 +16,7 @@ function checkId() {
 
 function searchTrack(text) {
 	var id = getId();
-	return fetch(SEARCH_URL.replace('INPUT_TEXT', text) + id).then(response => response.json());
+	return fetch(SEARCH_URL.replace('INPUT_TEXT', encodeURIComponent(text)) + id).then(response => response.json());
 }
 
 function loginSpotify() {
@@ -26,7 +26,7 @@ function loginSpotify() {
 
 function similarTracks(track, artist) {
 	var id = getId();
-	return fetch(SIMILAR_URL.replace('INPUT_TRACK', track).replace('INPUT_ARTIST', artist) + id).then(response => response.json());
+	return fetch(SIMILAR_URL.replace('INPUT_TRACK', encodeURIComponent(track)).replace('INPUT_ARTIST', encodeURIComponent(artist)) + id).then(response => response.json());
 }
 
 function encodeTracks(tracks) {
@@ -41,7 +41,7 @@ function encodeTracks(tracks) {
 
 function createPlaylist(name, tracks) {
 	var id = getId();
-	return fetch(CREATE_URL.replace('INPUT_NAME', name).replace('INPUT_TRACKS', encodeTracks(tracks)) + id, {method: 'POST'}).then(response => response.json());
+	return fetch(CREATE_URL.replace('INPUT_NAME', encodeURIComponent(name)).replace('INPUT_TRACKS', encodeTracks(tracks)) + id, {method: 'POST'}).then(response => response.json());
 }
 
 // TODO: DOING THE CATCHes
